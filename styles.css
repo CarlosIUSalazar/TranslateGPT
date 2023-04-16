@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F7F7F7;
+}
+
+.app.night {
+    background-color: #1A1A1A;
+}
+
+.upper-header {
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    justify-content: right;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    background-color: #3E82F7;
+    color: #FFFFFF;
+}
+
+
+.night-mode-container {
+    top: 100%;
+    right: 0;
+}
+
+.header.night {
+    background-color: #3A3A3A;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.translation-box {
+    width: 48%;
+}
+
+textarea {
+    width: 100%;
+    min-height: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+textarea.night {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+.language-select-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.language-select-container span {
+    margin-right: 5px;
+}
+
+select {
+    width: auto;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+}
+
+select.night {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+.footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #3E82F7;
+    color: #FFFFFF;
+}
+
+.footer.night {
+    background-color: #3A3A3A;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    color: #3E82F7;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #CCCCCC;
+}
+
+button.night {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+button.night:hover {
+    background-color: #555555;
+}
