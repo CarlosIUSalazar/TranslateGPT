@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Translator App</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div class="app" id="app">
@@ -19,6 +20,7 @@
                 <span>Translate into:</span>
                 <select id="language-select">
                     <option value="Japanese">Japanese</option>
+                    <option value="Romaji">Japanese Romaji</option>
                     <option value="English">English</option>
                     <option value="Spanish">Spanish</option>
                     <option value="French">French</option>
@@ -33,6 +35,11 @@
             </div>
             <div class="translation-box">
                 <textarea id="output-text" readonly placeholder="Translation will appear here"></textarea>
+                <div class="copy-button-container">
+                    <button id="copy-button" title="Copy to clipboard">
+                        <span class="material-icons">content_copy</span>
+                    </button>
+                </div>
             </div>
         </div>
         <div class="footer">

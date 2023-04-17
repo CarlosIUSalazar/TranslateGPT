@@ -10,12 +10,12 @@ translateButton.addEventListener('click', async () => {
     const text = inputText.value;
     const targetLanguage = languageSelect.value;
     if (text && targetLanguage) {
-      showSpinner();
-      const translation = await translateText(text, targetLanguage);
-      outputText.value = translation;
-      hideSpinner();
+        showSpinner();
+        const translation = await translateText(text, targetLanguage);
+        outputText.value = translation;
+        hideSpinner();
     }
-  });
+});
 
 nightModeToggle.addEventListener('click', () => {
     const nightModeElements = [
@@ -86,3 +86,10 @@ function hideSpinner() {
     spinnerContainer.style.visibility = 'hidden';
     translateButton.removeAttribute('disabled');
 }
+
+const copyButton = document.getElementById('copy-button');
+
+copyButton.addEventListener('click', () => {
+    outputText.select();
+    document.execCommand('copy');
+});
