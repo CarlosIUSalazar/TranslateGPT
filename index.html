@@ -18,11 +18,11 @@
             <div class="language-select-container">
                 <span>Translate into:</span>
                 <select id="language-select">
-                    <option value="de">Japanese</option>
-                    <option value="en">English</option>
-                    <option value="es">Spanish</option>
-                    <option value="fr">French</option>
-                    <option value="de">German</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="French">French</option>
+                    <option value="German">German</option>
                     <!-- Add more languages here -->
                 </select>
             </div>
@@ -37,6 +37,10 @@
         </div>
         <div class="footer">
             <button id="translate-button">Translate</button>
+        </div>
+        <div class="spinner-container" id="spinner-container">
+            <div class="spinner" id="spinner"></div>
+            <p class="processing-text" id="processing-text">Processing...</p>
         </div>
     </div>
     <script src="script.js"></script>

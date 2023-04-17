@@ -6,13 +6,16 @@ const nightModeToggle = document.getElementById('night-mode-toggle');
 const languageSelect = document.getElementById('language-select');
 
 translateButton.addEventListener('click', async () => {
+    console.log("Click");
     const text = inputText.value;
     const targetLanguage = languageSelect.value;
     if (text && targetLanguage) {
-        const translation = await translateText(text, targetLanguage);
-        outputText.value = translation;
+      showSpinner();
+      const translation = await translateText(text, targetLanguage);
+      outputText.value = translation;
+      hideSpinner();
     }
-});
+  });
 
 nightModeToggle.addEventListener('click', () => {
     const nightModeElements = [
@@ -34,6 +37,7 @@ async function translateText(text, targetLanguage) {
     const prompt = `Translate the following text to ${targetLanguage}: ${text}`;
     if (prompt) {
         try {
+            console.log("prompt is", prompt)
             const response = await fetch('https://api.openai.com/v1/chat/completions', {
                 method: 'POST',
                 headers: {
@@ -54,8 +58,8 @@ async function translateText(text, targetLanguage) {
 
             if (response.ok) {
                 console.log("response", response)
-                console.log("data", data)
                 const data = await response.json();
+                console.log("data", data) // Move this line after initializing the `data` variable
                 return data.choices[0].message.content;
             } else {
                 console.log("response", response)
@@ -67,4 +71,18 @@ async function translateText(text, targetLanguage) {
         }
     }
 
+}
+
+function showSpinner() {
+    const spinnerContainer = document.getElementById('spinner-container');
+    spinnerContainer.style.opacity = '1';
+    spinnerContainer.style.visibility = 'visible';
+    translateButton.setAttribute('disabled', true);
+}
+
+function hideSpinner() {
+    const spinnerContainer = document.getElementById('spinner-container');
+    spinnerContainer.style.opacity = '0';
+    spinnerContainer.style.visibility = 'hidden';
+    translateButton.removeAttribute('disabled');
 }

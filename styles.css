@@ -134,3 +134,52 @@ button.night {
 button.night:hover {
     background-color: #555555;
 }
+
+.spinner-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3E82F7;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+.spinner.night {
+border-top: 6px solid #FFFFFF;
+}
+
+.processing-text {
+font-size: 16px;
+font-weight: bold;
+color: #3E82F7;
+}
+
+.processing-text.night {
+color: #FFFFFF;
+}
+
+@keyframes spin {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
